@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  windowscontainer:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+  sql.data:
+    environment:
+      - sa_password=Pass@word
+      - ACCEPT_EULA=Y 
+networks:
+  default:
+    external:
+      name: nat
