@@ -4,16 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WindowsContainer.App;
+using WindowsContainer.App.Models;
 
 namespace WindowsContainer.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class TodoController : Controller
     {
         private readonly DBTodo _todo;
 
         // GET api/values
-        public ValuesController(DBTodo todo)
+        public TodoController(DBTodo todo)
         {
             _todo = todo;
         }

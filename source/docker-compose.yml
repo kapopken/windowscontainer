@@ -8,5 +8,11 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - sql.data
+      - cosmo
   sql.data:
     image: microsoft/mssql-server-windows-express:latest
+  cosmo:
+    image: microsoft/azure-cosmosdb-emulator:latest
+   #Make sure you have the localappdata folder created on your machine
+    volumes:
+      - ${localappdata}\CosmosDBEmulatorCert:c:/CosmosDBEmulator/CosmosDBEmulatorCert

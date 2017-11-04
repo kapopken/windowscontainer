@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using WindowsContainer.App;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using WindowsContainer.App.Queries;
+using WindowsContainer.Infrastructure;
 
 namespace WindowsContainer
 {
@@ -27,6 +29,8 @@ namespace WindowsContainer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<DocumentQuery, DocumentQuery>();
+            services.Configure<ConfigData>(Configuration);
             services.AddDbContext<DBTodo>(options =>
               options.UseSqlServer(Configuration["ConnectionString"],
                                       sqlServerOptionsAction: sqlOptions =>

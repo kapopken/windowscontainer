@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WindowsContainer.App.Models;
 
 namespace WindowsContainer.App
 {
@@ -16,10 +13,5 @@ namespace WindowsContainer.App
         //{
         //    optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1,5433;Initial Catalog=TodoDB;User Id=sa;Password=Pass@word");
         //}
-    }
-    public class Todo
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }
